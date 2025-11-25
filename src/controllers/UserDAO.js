@@ -11,13 +11,31 @@ const imageFields = [
     {name:'image4',maxCount:1},
     {name:'image5',maxCount:1},
 ]
+const imageField = {name:'avatar',maxCount:1}
 const slugify =require('slugify')
 class UserDAO{
+    loadAvatar(req,res)
+    {
+        const id = req.params.id 
+        const sql = 'SELECT avatar FROM users WHERE username=?'
+        const row = db.prepare(sql).get(id)
+        res.setHeader('Content-type','image/jpg')
+        res.send(row.avatar)
+    }
+    indexInfor(req,res)
+    {
+        const id = req.params.id
+        const userrow = db.prepare('SELECT * FROM users WHERE username=?').get(id)
+        const user  = new User(userrow)
+        res.render('pages/user/UserInfor',{
+            user:user
+        })
+    }
     index(req,res)
     {
          const userRow = db.prepare('SELECT * FROM users WHERE username=?').get(req.params.id)
             const user = new User(userRow)
-            const bookRow = db.prepare('SELECT * FROM books WHERE status=?').all('true')
+            const bookRow = db.prepare('SELECT * FROM books WHERE status=? AND username<>?').all(['true',req.params.id])
             const books = bookRow.map(row=> new Book(row))
             res.render('pages/user/UserHome',{
                 books :books,

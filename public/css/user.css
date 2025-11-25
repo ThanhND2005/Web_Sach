@@ -1,0 +1,54 @@
+.img-custome
+{
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border:solid #A04000;
+    border-radius: 50px;
+}
+.card-custome{
+    border: solid #d84315;
+    border-radius: 50px;
+}
+.btn-custome{
+    width: 80px;
+    height: 40px;
+    background-color: #d84315;
+    color: #333333;
+    border: none;
+    border-radius: 10px;
+    display: inline-flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+}
+.btn-custome:hover{
+    width: 80px;
+    height: 40px;
+    background-color: #E67E22;
+    color: #333333;
+    border: none;
+    border-radius: 5px;
+}
+.btn-custome:active{
+    width: 80px;
+    height: 40px;
+    background-color: #A04000;
+    color: #333333;
+    border: none;
+    border-radius: 10px;
+}
+.text-custome{
+    font-size: 60px;
+    font-family: "Playfair Display SC";
+    font-weight: 700;
+}
+.input-custome{
+    width: 1000%;
+    height: 50px;
+    font-size: 25px;
+    font-family: 'Playfair Display SC';
+    border: solid lightblue;
+    border-radius: 20px;
+}

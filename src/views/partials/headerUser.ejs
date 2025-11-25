@@ -33,7 +33,7 @@
             >
               <%= user.name %>
               <img
-                src="<%= user.avatar %>"
+                src="/user/avatar/<%= user.username %>"
                 alt="Avatar User"
                 class="avatar-user rounded-circle ms-2"
               />
@@ -42,7 +42,7 @@
               class="dropdown-menu dropdown-menu-end"
               aria-labelledby="navbarDropdown"
             >
-              <li><a class="dropdown-item" href="#">Thông tin</a></li>
+              <li><a class="dropdown-item" href="/user/infor/<%= user.username %>">Thông tin</a></li>
               <li><hr class="dropdown-divider" /></li>
               <li><hr class="dropdown-divider" /></li>
               <li><a class="dropdown-item" href="/user/<%= user.username %>/create-book">Đăng sách mới</a></li>
@@ -51,7 +51,7 @@
               </li>
               <li><hr class="dropdown-divider" /></li>
 
-              <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+              <li><a class="dropdown-item" href="/login/user">Đăng xuất</a></li>
             </ul>
           </li>
         </ul>
