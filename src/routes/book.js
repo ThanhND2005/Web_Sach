@@ -1,0 +1,12 @@
+const express = require('express')
+const route = express.Router()
+const bookDAO = require('../controllers/BookDAO')
+route.get('/book-image1/:slug',bookDAO.loadImage1)
+route.get('/book-image2/:slug',bookDAO.loadImage2)
+route.get('/book-image3/:slug',bookDAO.loadImage3)
+route.get('/book-image4/:slug',bookDAO.loadImage4)
+route.get('/book-image5/:slug',bookDAO.loadImage5)
+route.get('/magage/accept/:slug/:id',bookDAO.acceptBook)
+route.get('/manage/waiting/:id/:slug',bookDAO.indexWaitingBook)
+route.get('/infor/:id/:slug',bookDAO.indexInforBook)
+module.exports = route

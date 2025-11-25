@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/upbook.css" />
+    <link rel="stylesheet" href="/css/app.css">
+  </head>
+  <body>
+    <header>
+      <%- include('../../partials/headerUser') %>
+    </header>
+    <main>
+
+      <div class="container">
+        <h1 class="text-des mt-4">
+          Nhập đầy đủ thông tin cuốn sách bạn muốn đăng
+        </h1>
+        <form method="post" enctype="multipart/form-data">
+          <div class="form-group mt-4">
+            <label for="exampleInputEmail1">Tên sách</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              name="name"
+            />
+          </div>
+          <div class="form-group mt-2">
+            <label for="theloai">Thể loại</label>
+            <input
+              type="text"
+              class="form-control"
+              id="theloai"
+              aria-describedby="emailHelp"
+              name="category"
+            />
+          </div>
+          <div class="form-group mt-2">
+            <label for="exampleInputEmail2">Tình trạng</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail2"
+              aria-describedby="emailHelp"
+              name="condition"
+            />
+          </div>
+          <div class="form-group mt-2">
+            <label for="exampleInputEmail2">Mô tả</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail2"
+              aria-describedby="emailHelp"
+              name="desciption"
+            />
+          </div>
+          <div class="form-group mt-2">
+            <label for="exampleInputEmail2">Tác giả</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail2"
+              aria-describedby="emailHelp"
+              name="author"
+            />
+          </div>
+          <div class="form-group mt-2">
+            <label for="exampleInputEmail2">Giá tiền</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail2"
+              aria-describedby="emailHelp"
+              name="price"
+            />
+          </div>
+          <div>
+            <div class="form-group mt-2">
+              <label for="exampleInputEmail1">Hình 1</label>
+              <input
+                type="file"
+                class="form-control"
+                id="exampleInputEmail1"
+                name="image1"
+              />
+            </div>
+          </div>
+          <div>
+            <div class="form-group mt-2">
+              <label for="exampleInputEmail1">Hình 2</label>
+              <input
+                type="file"
+                class="form-control"
+                id="exampleInputEmail1"
+                name="image2"
+              />
+            </div>
+          </div>
+          <div>
+            <div class="form-group mt-2">
+              <label for="exampleInputEmail1">Hình 3</label>
+              <input
+                type="file"
+                class="form-control"
+                id="exampleInputEmail1"
+                name="image3"
+              />
+            </div>
+          </div>
+          <div>
+            <div class="form-group mt-2">
+              <label for="exampleInputEmail1">Hình 4</label>
+              <input
+                type="file"
+                class="form-control"
+                id="exampleInputEmail1"
+                name="image4"
+              />
+            </div>
+          </div>
+          <div>
+            <div class="form-group mt-2">
+              <label for="exampleInputEmail1">Hình 5</label>
+              <input
+                type="file"
+                class="form-control"
+                id="exampleInputEmail1"
+                name="image5"
+              />
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-custom mt-4">
+            Đăng
+          </button>
+        </form>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

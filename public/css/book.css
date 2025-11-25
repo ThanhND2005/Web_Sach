@@ -1,0 +1,40 @@
+.btn-custome{
+    width: 60px;
+    height: 40px;
+    background-color: #d84315;
+    color: #333333;
+    border: none;
+    border-radius: 10px;
+    display: inline-flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    
+}
+.btn-custome:hover{
+    width: 60px;
+    height: 40px;
+    background-color: #20201f;
+    color: #333333;
+    border: none;
+    border-radius: 5px;
+}
+.btn-custome:active{
+    width: 60px;
+    height: 40px;
+    background-color: #A04000;
+    color: #333333;
+    border: none;
+    border-radius: 10px;
+}
+.text-custome{
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  color: #333333;
+  font-size: xx-large;
+}
+.content-custome{
+    border: solid #d84315 2px;
+    border-radius: 10px;
+}
