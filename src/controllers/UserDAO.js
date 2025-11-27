@@ -11,7 +11,7 @@ const imageFields = [
     {name:'image4',maxCount:1},
     {name:'image5',maxCount:1},
 ]
-const imageField = {name:'avatar',maxCount:1}
+const imageField = [{name:'avatar',maxCount:1}]
 const slugify =require('slugify')
 class UserDAO{
     loadAvatar(req,res)
@@ -31,26 +31,51 @@ class UserDAO{
             user:user
         })
     }
-    index(req,res)
-    {
+        index(req,res)
+        {
          const userRow = db.prepare('SELECT * FROM users WHERE username=?').get(req.params.id)
-            const user = new User(userRow)
-            const bookRow = db.prepare('SELECT * FROM books WHERE status=? AND username<>?').all(['true',req.params.id])
-            const books = bookRow.map(row=> new Book(row))
-            res.render('pages/user/UserHome',{
-                books :books,
-                user : user 
+         const user = new User(userRow)
+         const bookRow = db.prepare('SELECT * FROM books WHERE status=? AND username<>? AND deleted=?').all(['true',req.params.id,'false'])
+         const books = bookRow.map(row=> new Book(row))
+         res.render('pages/user/UserHome',{
+             books :books,
+             user : user 
             })
-    }
-    createBook(req,res)
-    {
-        const userRow = db.prepare('SELECT * FROM users WHERE username=?').get(req.params.id)
-        const user = new User(userRow)
-        res.render('pages/book/UpBook',{
-            user : user
-        })
-    }
-    upBook(req,res)
+        }
+        createBook(req,res)
+        {
+            const userRow = db.prepare('SELECT * FROM users WHERE username=?').get(req.params.id)
+            const user = new User(userRow)
+            res.render('pages/book/UpBook',{
+                user : user
+            })
+        }
+        udpateInfor(req,res)
+        {
+            const {name,dob,gender,address,phone} = req.body;
+            const id = req.params.id;
+            const ex = db.prepare('UPDATE users SET name=?,dob=?,gender=?,address=?,phone=? WHERE username=?').run([name,dob,gender,address,phone,id])
+            res.redirect(`/user/infor/${id}`)
+        }
+        updateAvatar(req,res)
+        {
+            const id = req.params.id;
+            const file  = req.file;
+            const getBufferOrNull = (filesObject) =>{
+                
+                if(filesObject && filesObject.buffer)
+                {
+                    return filesObject.buffer
+                }
+                else {
+                    return null
+                }
+            }
+            const imageBuffers = getBufferOrNull(file)
+            const ex = db.prepare('UPDATE users SET avatar=? WHERE username=?').run([imageBuffers,id])
+            res.redirect(`/user/infor/${id}`)
+        }
+        upBook(req,res)
     {
         const id = req.params.id
         const {name,category,condition,desciption,author,price} = req.body
@@ -94,6 +119,7 @@ class UserDAO{
         })
     }
 }
-module.exports = new UserDAO
+module.exports = new UserDAO;
 module.exports.upload = upload; 
 module.exports.imageFields = imageFields;
+module.exports.imageField = imageField;

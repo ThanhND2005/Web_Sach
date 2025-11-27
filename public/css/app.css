@@ -45,7 +45,7 @@
     font-family: "lato", "sans-serif";
 }
 .btn-custome{
-    width: 60px;
+    width: 80px ;
     height: 40px;
     background-color: #d84315;
     color: #333333;
@@ -58,8 +58,23 @@
     white-space: nowrap;
     
 }
+.btn1-custome{
+    width: 80px;
+    height: 40px;
+    background-color: #d84315;
+    color: #333333;
+    border: none;
+    border-radius: 10px;
+    display: inline-flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    
+}
+
 .btn-custome:hover{
-    width: 60px;
+    width: 80px;
     height: 40px;
     background-color: #E67E22;
     color: #333333;
@@ -67,7 +82,7 @@
     border-radius: 5px;
 }
 .btn-custome:active{
-    width: 60px;
+    width: 80px;
     height: 40px;
     background-color: #A04000;
     color: #333333;

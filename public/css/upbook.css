@@ -9,3 +9,8 @@
     font-family: 'Playfair Display SC';
     font-weight: 700 ;
 }
+.form-custome{
+    border: solid #d84315;
+    border-radius: 20px;
+
+}

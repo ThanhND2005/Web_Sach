@@ -33,7 +33,7 @@
             >
               <%= admin.name %>
               <img
-                src="<%= admin.avatar %>"
+                src="/admin/<%= admin.username%>/loadAvatar"
                 alt="Avatar User"
                 class="avatar-user rounded-circle ms-2"
               />
@@ -42,16 +42,16 @@
               class="dropdown-menu dropdown-menu-end"
               aria-labelledby="navbarDropdown"
             >
-              <li><a class="dropdown-item" href="#">Thông tin</a></li>
+              <li><a class="dropdown-item" href="/admin/infor/<%= admin.username %>">Thông tin</a></li>
               <li><hr class="dropdown-divider" /></li>
               <li><hr class="dropdown-divider" /></li>
               <li>
-                <a class="dropdown-item" href="#"
+                <a class="dropdown-item" href="/admin/manage-user/<%= admin.username %>"
                   >Quản lý người dùng trong hệ thống</a
                 >
               </li>
               <li>
-                <a class="dropdown-item" href="#"
+                <a class="dropdown-item" href="/admin/manage-book/<%= admin.username %>"
                   >Quản lý sách trong hệ thống</a
                 >
               </li>
