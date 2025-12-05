@@ -1,12 +1,9 @@
-const express = require('express')
-const adminRoute = require('./admin')
-const userRoute = require('./user')
-const bookRoute = require('./book')
-const loginRoute = require('./login')
-function route(app){
-    app.use('/admin',adminRoute)
-    app.use('/user',userRoute)
-    app.use('/book',bookRoute)
-    app.use('/login',loginRoute)
+const userRoute = require('./userRoute');
+const bookRoute = require('./bookRoute');
+
+const route = (app)=>{
+    app.use('/',userRoute);
+    app.use('/book',bookRoute);
 }
-module.exports = route
+
+module.exports = route;
